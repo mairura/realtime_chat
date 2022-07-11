@@ -38,6 +38,14 @@ const Auth = () => {
         cookies.set('username', username);
         cookies.set('fullName', fullName);
         cookies.set('userId', userId);
+
+        if(isSignup) {
+            cookies.set('phoneNumber', phoneNumber);
+            cookies.set('avatarURL', avatarURL);
+            cookies.set('hashedPassword', hashedPassword);
+        }
+
+        window.location.reload();
     }
 
     const switchMode =() => {
