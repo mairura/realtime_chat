@@ -5,6 +5,7 @@ import Cookies from 'universal-cookie';
 
 import { ChannelContainer, ChannelListContainer, Auth } from './components';
 
+import 'stream-chat-react/dist/css/index.css';
 import './App.css';
 
 const cookies = new Cookies();
@@ -16,7 +17,7 @@ const authToken = cookies.get("token");
 const client = StreamChat.getInstance(apiKey);
 
 if(authToken) {
-  client.connectUser({
+  client.connectUser({ 
         id: cookies.get('userId'),
         name: cookies.get('username'),
         fullName: cookies.get('fullName'),
